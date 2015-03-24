@@ -35,7 +35,7 @@ public final class PropertiesConfig {
         BeanProperties beanProperties = entity.getClass().getAnnotation(BeanProperties.class);
 
         // Get all field with Key annotation
-        List<Field> fields = ReflectionUtils.getFieldsWithAnnotation(entity, Key.class);
+        List<Field> fields = ReflectionUtils.getFieldsWithAnnotations(entity.getClass(), Key.class);
         if (fields == null || fields.isEmpty()) return;
 
         // Load the properties file
